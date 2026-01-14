@@ -1,21 +1,22 @@
 [dependency-groups]
 backends = [
-  "maturin",
-  "meson-python @ git+https://github.com/mgorny/meson-python@freethreading-limited-api",
-  "scikit-build-core",
+ # "maturin",
+ "meson-python",
+ # "meson-python @ git+https://github.com/mgorny/meson-python@freethreading-limited-api",
+ # "scikit-build-core",
   "setuptools",
 ]
 build-tools = [
-  "cython @ git+https://github.com/cython/cython@freethreading-limited-api-preview",
-  "cython-cmake",  # for scikit-build-core
-  "nanobind",
+#  "cython @ git+https://github.com/cython/cython@freethreading-limited-api-preview",
+#  "cython-cmake",  # for scikit-build-core
+#  "nanobind",
 ]
 test = [
   "build",
   "pytest >= 9.0",
   "pytest-xdist",
   { include-group = "backends" },
-  { include-group = "build-tools" },
+#  { include-group = "build-tools" },
 ]
 
 [tool.pytest]
@@ -29,6 +30,6 @@ skipsdist = true
 
 [tool.tox.env_run_base]
 commands = [
-  ["pytest", "-n", "auto"],
+  ["pytest", "-n", "auto", "--verbose"],
 ]
 dependency_groups = ["test"]

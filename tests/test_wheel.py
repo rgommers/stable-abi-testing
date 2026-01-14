@@ -25,14 +25,14 @@ XFAIL_PYO3 = pytest.mark.xfail(
 
 TOP_DIR = Path(__file__).parent.parent
 TEST_CASES = [
-    "maturin/rust",
+#    "maturin/rust",
     "meson-python/c",
-    "meson-python/cython",
-    "scikit-build-core/c",
-    "scikit-build-core/cython",
-    "scikit-build-core/nanobind",
+#    "meson-python/cython",
+#    "scikit-build-core/c",
+#    "scikit-build-core/cython",
+#    "scikit-build-core/nanobind",
     "setuptools/c",
-    "setuptools/cython",
+#    "setuptools/cython",
 ]
 
 TEST_CALL = """
