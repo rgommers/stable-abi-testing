@@ -44,6 +44,7 @@ assert value == 3, f"add(1, 2) == {value} instead of 3"
 
 TEST_ABI3 = """
 from pathlib import Path
+import sys
 
 import limited
 
@@ -51,8 +52,12 @@ import limited
 if hasattr(limited, "__path__"):
     from limited import limited
 
-assert ".abi3" in Path(limited.__file__).name, (
-    f"{limited.__file__} is not abi3 extension")
+# On Windows extension modules cannot be distinguished from regular ones by
+# their file name.
+# TODO: test wheel filename instead.
+if not sys.platform == 'win32':
+    assert ".abi3" in Path(limited.__file__).name, (
+        f"{limited.__file__} is not abi3 extension")
 """
 
 
