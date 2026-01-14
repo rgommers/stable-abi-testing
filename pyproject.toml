@@ -4,7 +4,8 @@ backends = [
  "meson-python",
  # "meson-python @ git+https://github.com/mgorny/meson-python@freethreading-limited-api",
  # "scikit-build-core",
-  "setuptools",
+#  "setuptools",
+  "setuptools @ git+https://github.com/rgommers/setuptools@pyinit-export-fix",
 ]
 build-tools = [
 #  "cython @ git+https://github.com/cython/cython@freethreading-limited-api-preview",
